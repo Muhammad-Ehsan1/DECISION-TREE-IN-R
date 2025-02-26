@@ -1,0 +1,12 @@
+install.packages("rpart")
+library(rpart)
+install.packages("rpart.plot")
+library(rpart.plot)
+install.packages("readxl")
+library("readxl")
+bankloan<-read_excel("E:/data analytics/datasets/bankloan.xlsx")
+View(bankloan)  
+attach(bankloan)
+z<-rpart(df~age+creddebt)
+rpart.plot(z)
+
